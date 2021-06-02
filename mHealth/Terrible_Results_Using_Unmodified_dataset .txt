@@ -1,0 +1,14 @@
+>>> train_data = all_train
+>>> model = fl.get_empty_model()
+>>> learning_rate = 0.001
+>>> for round_num in range(5):
+...   model = fl.federated_train(model, learning_rate, train_data)
+...   learning_rate = learning_rate * 0.9
+...   loss = fl.federated_eval(model, train_data)
+...   print('round {}, loss={}'.format(round_num, loss))
+...
+round 0, loss=24905.3359375
+round 1, loss=25946.1640625
+round 2, loss=26896.66015625
+round 3, loss=27162.787109375
+round 4, loss=27485.84765625
